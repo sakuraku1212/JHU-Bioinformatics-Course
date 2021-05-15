@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Search History Run</title>
+        <link rel="stylesheet" type="text/css" href="./css/history_result.css"  >
+    </head>
+    <body>
+      <h1>Search History Run</h1>
+      <table>
+        <tr>
+          <td>Sequence (5' -> 3')</td>
+          <td>Reverse complement (5' -> 3')</td>
+          <td>Length[bp]</td>
+          <td>GC content[%]</td>
+          <td>Melting temperature[°C]</td>
+          </tr>
+        {% for output in outputs %}
+        <tr>
+          <td>{{ output.seq }}</td>
+          <td>{{ output.rev }}</td>
+          <td>{{ output.len }}</td>
+          <td>{{ output.gc }}</td>
+          <td>{{ output.TM }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </body>
+    <a href="http://bfx3.aap.jhu.edu/hzhan141/final/search.html">
+      <input type=button value="Back to homepage">
+      </a>
+</html>
+
